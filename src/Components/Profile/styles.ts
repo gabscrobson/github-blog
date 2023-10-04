@@ -18,7 +18,7 @@ export const ProfileContainer = styled.div`
     border-radius: 8px;
     object-fit: cover;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 500px) {
       width: 8rem;
       height: 8rem;
     }
@@ -27,9 +27,45 @@ export const ProfileContainer = styled.div`
 
 export const ProfileInfoContainer = styled.div`
   flex: 1;
-  height: 9rem;
+  padding-top: 0.75rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   justify-content: space-between;
+
+  > h2 {
+    color: ${(props) => props.theme.baseTitle};
+  }
+`
+
+export const ProfileInfoTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const GithubLink = styled.a`
+  display: flex;
   gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+  color: ${(props) => props.theme.baseLink};
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+
+  svg {
+    margin-top: -0.2rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+`
+
+export const TagListContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 `

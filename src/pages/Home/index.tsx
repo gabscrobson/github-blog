@@ -4,7 +4,7 @@ import { HomeContainer } from './styles'
 export function Home() {
   return (
     <HomeContainer>
-      <Profile />
+      <Profile username="gabscrobson" />
       <h1>Home</h1>
     </HomeContainer>
   )
