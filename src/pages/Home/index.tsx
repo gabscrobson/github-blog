@@ -10,7 +10,6 @@ import {
 } from './styles'
 import { api } from '../../lib/axios'
 import { formatDistanceToNow } from 'date-fns'
-import ptBr from 'date-fns/locale/pt-BR'
 import { username } from '../../constants/constants'
 
 interface Issue {
@@ -81,10 +80,7 @@ export function Home() {
               number={issue.number}
               title={issue.title}
               content={issue.body}
-              date={formatDistanceToNow(new Date(issue.created_at), {
-                locale: ptBr,
-                addSuffix: true,
-              })}
+              date={formatDistanceToNow(new Date(issue.created_at))}
             />
           ))}
         </PostListContainer>

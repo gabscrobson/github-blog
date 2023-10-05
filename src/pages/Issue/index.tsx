@@ -21,20 +21,21 @@ import { useState } from 'react'
 import { api } from '../../lib/axios'
 import { useParams } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
+import { formatDistanceToNow } from 'date-fns'
 
 interface IssueData {
   title: string
   body: string
-  created_at: string
+  dateRelativeToNow: string
   comments: number
   hmtl_url: string
 }
 
 export function Issue() {
   const [issueData, setIssueData] = useState<IssueData>({
-    title: '',
+    title: 'Issue title',
     body: '',
-    created_at: '',
+    dateRelativeToNow: '',
     comments: 0,
     hmtl_url: '',
   })
@@ -54,7 +55,7 @@ export function Issue() {
     setIssueData({
       title: data.title,
       body: data.body,
-      created_at: data.created_at,
+      dateRelativeToNow: formatDistanceToNow(new Date(data.created_at)),
       comments: data.comments,
       hmtl_url: data.hmtl_url,
     })
@@ -77,9 +78,11 @@ export function Issue() {
         <h2>{issueData.title}</h2>
         <TagListContainer>
           <Tag icon={<GithubLogo weight="fill" />}>{username}</Tag>
-          <Tag icon={<CalendarBlank weight="fill" />}>Há um dia</Tag>
+          <Tag icon={<CalendarBlank weight="fill" />}>
+            {issueData.dateRelativeToNow}
+          </Tag>
           <Tag icon={<ChatCircle weight="fill" />}>
-            {`${issueData.comments.toString()} comentários`}
+            {`${issueData.comments.toString()} comments`}
           </Tag>
         </TagListContainer>
       </IssueHeaderContainer>

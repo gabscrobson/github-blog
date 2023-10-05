@@ -25,12 +25,12 @@ interface ProfileProps {
 
 export function Profile({ username }: ProfileProps) {
   const [userData, setUserData] = useState<UserData>({
-    name: '',
-    bio: '',
-    company: '',
+    name: 'username',
+    bio: 'bio',
+    company: 'company',
     followers: 0,
-    avatarUrl: '',
-    htmlUrl: '',
+    avatarUrl: '/default-profile.jpg',
+    htmlUrl: 'https://github.com',
   })
 
   // Load user data on component mount
