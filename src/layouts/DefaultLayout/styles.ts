@@ -19,4 +19,8 @@ export const LayoutContent = styled.div`
   margin: -5rem auto 3rem;
 
   background: ${(props) => props.theme['gray-800']};
+
+  @media screen and (max-width: 500px) {
+    margin-top: -10rem;
+  }
 `
