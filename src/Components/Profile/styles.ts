@@ -23,6 +23,12 @@ export const ProfileContainer = styled.div`
       height: 8rem;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
 `
 
 export const ProfileInfoContainer = styled.div`
