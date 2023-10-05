@@ -16,8 +16,7 @@ export const LayoutContainer = styled.div`
 export const LayoutContent = styled.div`
   max-width: 1280px;
   width: 90%;
-  min-height: 100vh;
-  margin: -5rem auto;
+  margin: -5rem auto 3rem;
 
   background: ${(props) => props.theme['gray-800']};
 `

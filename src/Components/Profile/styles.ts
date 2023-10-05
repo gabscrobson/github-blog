@@ -53,14 +53,15 @@ export const GithubLink = styled.a`
   color: ${(props) => props.theme.baseLink};
   font-size: 0.9rem;
   font-weight: 600;
-  transition: opacity 0.2s;
+  transition: 0.2s;
+  border-bottom: 1px solid transparent;
 
   svg {
     margin-top: -0.2rem;
   }
 
   &:hover {
-    opacity: 0.8;
+    border-bottom: 1px solid ${(props) => props.theme.baseLink};
   }
 `
 

@@ -66,7 +66,9 @@ export function Profile({ username }: ProfileProps) {
         <p>{userData.bio}</p>
         <TagListContainer>
           <Tag icon={<GithubLogo weight="fill" />}>{username}</Tag>
-          <Tag icon={<Buildings weight="fill" />}>empresa</Tag>
+          {userData.company && (
+            <Tag icon={<Buildings weight="fill" />}>{userData.company}</Tag>
+          )}
           <Tag icon={<Users weight="fill" />}>
             {userData.followers.toString()}
           </Tag>
