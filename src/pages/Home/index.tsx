@@ -11,15 +11,14 @@ import {
 import { api } from '../../lib/axios'
 import { formatDistanceToNow } from 'date-fns'
 import ptBr from 'date-fns/locale/pt-BR'
+import { username } from '../../constants/constants'
 
 interface Issue {
-  id: number
+  number: number
   title: string
   body: string
   created_at: string
 }
-
-const username = 'gabscrobson'
 
 export function Home() {
   const [issues, setIssues] = useState<Issue[]>([])
@@ -78,7 +77,8 @@ export function Home() {
         <PostListContainer>
           {filteredIssues.map((issue) => (
             <Post
-              key={issue.id}
+              key={issue.number}
+              number={issue.number}
               title={issue.title}
               content={issue.body}
               date={formatDistanceToNow(new Date(issue.created_at), {

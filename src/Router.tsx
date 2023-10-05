@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Home } from './pages/Home'
 import { DefaultLayout } from './layouts/DefaultLayout'
+import { Issue } from './pages/Issue'
 
 export function Router() {
   const location = useLocation()
@@ -15,7 +16,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/:issueNumber" element={<Home />} />
+        <Route path="/:issueNumber" element={<Issue />} />
       </Route>
     </Routes>
   )

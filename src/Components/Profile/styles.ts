@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const ProfileContainer = styled.div`
-  width: 100%;
   background: ${(props) => props.theme.baseProfile};
   padding: 1.5rem 2rem;
   border-radius: 8px;
@@ -38,17 +37,16 @@ export const ProfileInfoContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   justify-content: space-between;
-
-  > h2 {
-    color: ${(props) => props.theme.baseTitle};
-  }
 `
 
 export const ProfileInfoTitle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+
+  > h2 {
+    color: ${(props) => props.theme.baseTitle};
+  }
 `
 
 export const GithubLink = styled.a`

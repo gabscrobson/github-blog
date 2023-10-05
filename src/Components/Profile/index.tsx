@@ -1,5 +1,5 @@
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from 'phosphor-react'
-import { Tag } from './Tag'
+import { Tag } from '../Tag'
 import {
   GithubLink,
   ProfileContainer,
